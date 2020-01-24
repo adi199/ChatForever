@@ -1,0 +1,83 @@
+body{
+
+      background: #43C6AC;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to bottom, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to bottom, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+      }
+      .mainContainer{
+        height: 100%;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+      } 
+      .message{
+        float: left;
+        position: relative;
+	      background: #00aabb;
+        border-radius: .4em;
+        clear: both;
+        margin-left: 17px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+      }
+      .message:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-right-color: #00aabb;
+        border-left: 0;
+        border-bottom: 0;
+        margin-top: -10px;
+        margin-left: -20px;
+      }
+      .message-own{
+        float: right;
+        position: relative;
+        background: #DCF8C6;
+        border-radius: .4em;
+        clear: both;
+        margin-right: 17px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+      }
+      .message-own:after{
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: #DCF8C6;
+        border-right: 0;
+        border-bottom: 0;
+        margin-top: -10px;
+        margin-right: -20px;
+      }
+      .chat-log {
+        background: #403B4A;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #E7E9BB, #403B4A);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #E7E9BB, #403B4A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                
+        border-radius: 15px;
+        margin-bottom: 5px;
+        overflow: auto;
+      } 
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      .userActiveList{
+        background: #e1eec3;
+        background: -webkit-linear-gradient(to bottom, #f05053, #e1eec3);
+        background: linear-gradient(to bottom, #f05053, #e1eec3);
+
+
+        border-radius: 15px;
+        margin-bottom: 5px;
+        overflow: auto;
+      }

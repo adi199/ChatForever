@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="chatBoxStyle.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    
+    <h3 id="username"  style="visibility: hidden"><%= user%></h3>
+    <div class="mainContainer container d-flex flex-row shadow">
+      <div class="userActiveList h-75 w-25">
+          <ul class="list-group" id="activeUsers">
+              <li class="container mb-1 mt-1 list-group-item onlineUser" id="<chatRoom>">Common Chat Room</li>
+        <% list.forEach(function(name){ if(user!=name){%>
+          <li class="container mb-1 list-group-item onlineUser" id="<%= name %>"><%= name %><span class="badge rounded-lg txt-success">Online</span></li>
+        <% }}); %>
+      </div>
+      <div class="container d-flex flex-column h-75 w-75">
+        <div class="chat-log h-100" id="messages">
+            <nav class="navbar sticky-top navbar-light bg-light">
+              <a class="navbar-brand" id="navListener"></a>
+            </nav>
+        </div>
+        <div class="chat-form">
+            <div class="container w-100">
+              <form class="form-horizontal">
+                <div class="row">
+                  <div class="col-12 col-md-10">
+                    <input type="text" class="form-control" id="m" placeholder="Type a Message" autocomplete="off"/>
+                  </div>
+                  <div class="col-6 col-md-2">
+                   <button type="submit" class="btn btn-success btn-block">Send<span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>  
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="chatBox.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <style>
+                @import url('https://fonts.googleapis.com/css?family=Asap&display=swap');
+                body { 
+                        background: url('https://codetheweb.blog/assets/img/posts/css-advanced-background-images/mountains.jpg') no-repeat center center fixed; 
+                        -webkit-background-size: cover;
+                        -moz-background-size: cover;
+                        -o-background-size: cover;
+                        background-size: cover;
+                        display:flex;
+                        justify-content:center;
+                        align-items:center;
+                    }
+                .login{
+                    font-family: 'Asap', sans-serif;
+                    text-align: center;
+                    border-radius: 15px;
+                    background: #8e9eab;
+                    background: -webkit-linear-gradient(to bottom, #eef2f3, #8e9eab);
+                    background: linear-gradient(to bottom, #eef2f3, #8e9eab);   
+                    height: 320px;
+                    width: 400px;
+                    align-items: center;
+                }
+                #username{
+                    border:0;
+                    text-align: center;
+                    border-radius: 20px;
+                    height: 45px;
+                    width: 240px;
+                    margin-top: 5%;   
+                }
+                #password{
+                    border:0;
+                    text-align: center;
+                    border-radius: 20px;
+                    height: 45px;
+                    width: 240px;
+                    margin-top: 5%;   
+                }
+            </style>
+    </head>
+    <body>
+        <p id="message" style="display:none"><%= message %></p>
+        <div class="login">
+            <h1 style="padding-top: 10%;">Enter Chat Room</h1>
+            <form action="/chatRoom" method="POST" name="loginForm" onsubmit="return validateUser(this)">
+                <input type="text" id="username" placeholder="Enter username" name="username"></input><br>
+                <input type="password" id="password" placeholder="Enter password" name="password"></input><br>
+                <input type="submit" style="border:0;text-align: center;color:blue;height: 45px;width:100px;border-radius: 20px;margin-top:3%"></input>
+            </form>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function(){
+            var msg = document.getElementById("message").innerHTML;
+            if(msg.length!=0){
+            alert(msg);
+            }
+        })
+    </script>
+</html>
